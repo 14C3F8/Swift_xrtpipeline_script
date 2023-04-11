@@ -1,6 +1,6 @@
 # A python script for Swift/XRT data reduction 
 
-The script runs xrtpipeline, xrtproducts and xrtmkarf to generate the PC & WT pointing mode lightcurves and spectrums.
+A simple python3 script runs xrtpipeline, xrtproducts and xrtmkarf to generate the PC & WT pointing mode lightcurves and spectrums.
 
 ## Files:
 - xrt_repro.py: The main script
@@ -25,7 +25,6 @@ Also, the script will create a 'log' folder at the current directory. Please ens
 
 ## Required packages, programs & files:
 
-The script is based on Python 3
 **Python packages**: 
 - os, glob, re, subprocess, time, shutil
 - astropy, astroquery
