@@ -26,7 +26,7 @@ def main(indir,outdir,obsobject,pc_binsize,wt_binsize,pilow,pihigh,pcrmf,wtrmf,s
     print('School of Space Science and Physics,' .center(60, ' '))
     print('Institute of Space Sciences, Shandong University'.center(60, ' '))
     print()
-    print(' Github page: https://github.com/14C3F8/14c3f8-astro-tools/Swift_XRT '.center(60, ' '))
+    print(' Github page: https://github.com/14C3F8/Swift_xrtpipeline_script '.center(60, ' '))
     print(' Email: 202117741@mail.sdu.edu.cn '.center(60, ' '))
     print()
     print(' Script created on April 2023'.center(60, ' '))
