@@ -2,7 +2,7 @@
 """
 Created on Mon Apr  3 01:47:28 2023
 @author: Songbo Gao
-@Github page: https://github.com/14C3F8/14c3f8-astro-tools/Swift_XRT
+@Github page: https://github.com/14C3F8/Swift_xrtpipeline_script
 
 """
 
