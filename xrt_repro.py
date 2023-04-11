@@ -47,7 +47,7 @@ def main(indir,outdir,obsobject,pc_binsize,wt_binsize,pilow,pihigh,pcrmf,wtrmf,s
     result_directory = outdir
     check_and_create_result_directory(result_directory)
     
-    log_path = os.path.join(outdir, 'log')
+    log_path = './log'
     if os.path.exists(log_path):
         shutil.rmtree(log_path)
         os.makedirs(log_path)
