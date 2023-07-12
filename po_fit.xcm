@@ -1,0 +1,65 @@
+statistic cstat
+data 1:1 grp2.pha
+ignore bad
+ignore **-.3 10.-**
+
+method leven 10 0.01
+abund wilm
+xsect vern
+cosmo 70 0 0.73
+xset delta 0.01
+systematic 0
+model  TBabs*cflux*zpowerlw
+          0.175         -1          0          0     100000      1e+06
+            0.3         -1          0          0      1e+06      1e+06
+             10         -1          0          0      1e+06      1e+06
+           -10.       0.01       -100       -100        100        100
+             3.       0.01         -3         -2          9         10
+          0.069         -1     -0.999     -0.999         10         10
+              1         -1          0          0      1e+20      1e+24
+bayes off
+query yes
+renorm
+fit
+set save_flux [open "flux_out.txt" w+]
+puts $save_flux "band flux err_low err_high  data_faults"
+puts $save_flux "keV erg/cm2/s(log10) erg/cm2/s(log10) erg/cm2/s(log10)"
+fr 5
+fit
+set range1 "0.3-10.0"
+tclout param 4
+set flux0310 $xspec_tclout
+split $flux0310 " "
+set flux0310 [lindex $flux0310 0]
+err 4
+tclout error 4
+set err0310 $xspec_tclout
+append range1 " " $flux0310 " " $err0310
+puts $save_flux $range1
+new 3 2.
+fit
+set range2 "0.3-2.0"
+tclout param 4
+set flux032 $xspec_tclout
+split $flux032 " "
+set flux032 [lindex $flux032 0]
+err 4
+tclout error 4
+set err032 $xspec_tclout
+append range2 " " $flux032 " " $err032
+puts $save_flux $range2
+new 3 10.
+new 2 2.
+fit
+set range3 "2.0-10.0"
+tclout param 4
+set flux210 $xspec_tclout
+split $flux210 " "
+set flux210 [lindex $flux210 0]
+err 4
+tclout error 4
+set err210 $xspec_tclout
+append range3 " " $flux210 " " $err210
+puts $save_flux $range3
+close $save_flux
+exit
