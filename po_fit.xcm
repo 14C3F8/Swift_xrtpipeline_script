@@ -1,5 +1,5 @@
 statistic cstat
-data 1:1 grp2.pha
+data 1:1 grp.pha
 ignore bad
 ignore **-.3 10.-**
 
